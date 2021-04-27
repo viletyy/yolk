@@ -29,7 +29,6 @@ func CreateDir(dirs ...string) (err error) {
 			return err
 		}
 		if !exist {
-			fmt.Println("create directory" + v)
 			err = os.MkdirAll(v, os.ModePerm)
 			if err != nil {
 				return fmt.Errorf("create directory: %v", v)

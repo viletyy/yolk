@@ -31,5 +31,3 @@ _testmain.go
 /bin
 cover.out
 cover.html
-
-go.sum
