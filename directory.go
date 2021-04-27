@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-03-22 10:45:37
  * @LastEditors: viletyy
- * @LastEditTime: 2021-04-26 21:15:38
+ * @LastEditTime: 2021-04-27 16:15:43
  * @FilePath: /yolk/directory.go
  */
 package yolk
@@ -9,8 +9,6 @@ package yolk
 import (
 	"fmt"
 	"os"
-
-	"go.uber.org/zap"
 )
 
 func PathExists(path string) (bool, error) {
@@ -34,7 +32,7 @@ func CreateDir(dirs ...string) (err error) {
 			fmt.Println("create directory" + v)
 			err = os.MkdirAll(v, os.ModePerm)
 			if err != nil {
-				fmt.Println("create directory"+v, zap.Any(" error:", err))
+				return fmt.Errorf("create directory: %v", v)
 			}
 		}
 	}
