@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-03-22 10:45:37
  * @LastEditors: viletyy
- * @LastEditTime: 2021-04-27 16:15:43
+ * @LastEditTime: 2021-04-29 11:44:54
  * @FilePath: /yolk/directory.go
  */
 package yolk
@@ -20,6 +20,14 @@ func PathExists(path string) (bool, error) {
 		return false, nil
 	}
 	return false, err
+}
+
+func IsDir(f string) bool {
+	fi, err := os.Stat(f)
+	if err  != nil {
+		return false
+	}
+	return fi.IsDir()
 }
 
 func CreateDir(dirs ...string) (err error) {
