@@ -1,10 +1,10 @@
 /*
  * @Date: 2021-03-22 10:45:37
  * @LastEditors: viletyy
- * @LastEditTime: 2021-04-29 11:44:54
- * @FilePath: /yolk/directory.go
+ * @LastEditTime: 2021-06-10 14:25:28
+ * @FilePath: /yolk/directory/directory.go
  */
-package yolk
+package directory
 
 import (
 	"fmt"
@@ -24,7 +24,7 @@ func PathExists(path string) (bool, error) {
 
 func IsDir(f string) bool {
 	fi, err := os.Stat(f)
-	if err  != nil {
+	if err != nil {
 		return false
 	}
 	return fi.IsDir()

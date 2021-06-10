@@ -1,16 +1,18 @@
 /*
  * @Date: 2021-04-27 13:50:37
  * @LastEditors: viletyy
- * @LastEditTime: 2021-04-27 14:31:42
- * @FilePath: /yolk/paginator.go
+ * @LastEditTime: 2021-06-10 14:23:35
+ * @FilePath: /yolk/paginator/paginator.go
  */
-package yolk
+package paginator
 
 import (
 	"math"
 	"net/http"
 	"net/url"
 	"strconv"
+
+	"github.com/viletyy/yolk/convert"
 )
 
 type Paginator struct {
@@ -40,7 +42,7 @@ func (p *Paginator) Nums() int64 {
 }
 
 func (p *Paginator) SetNums(nums interface{}) {
-	p.nums, _ = ToInt64(nums)
+	p.nums, _ = convert.ToInt64(nums)
 }
 
 func (p *Paginator) Page() int {

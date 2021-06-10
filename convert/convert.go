@@ -1,27 +1,16 @@
 /*
- * @Date: 2021-03-12 17:37:03
+ * @Date: 2021-06-10 14:20:53
  * @LastEditors: viletyy
- * @LastEditTime: 2021-04-27 16:05:14
- * @FilePath: /yolk/helper.go
+ * @LastEditTime: 2021-06-10 14:21:09
+ * @FilePath: /yolk/convert/str_to.go
  */
-package yolk
+package convert
 
 import (
 	"fmt"
-	"math/rand"
 	"reflect"
 	"strconv"
 )
-
-func GetRandomString(n int) string {
-	const alphanum = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-	var bytes = make([]byte, n)
-	rand.Read(bytes)
-	for i, b := range bytes {
-		bytes[i] = alphanum[b%byte(len(alphanum))]
-	}
-	return string(bytes)
-}
 
 type StrTo string
 
